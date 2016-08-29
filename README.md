@@ -1,2 +1,2 @@
-# angujarjs
-Ejemplos angularjs
+# angularjs
+Ejemplos de angularjs
