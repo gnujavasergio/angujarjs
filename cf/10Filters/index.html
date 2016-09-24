@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+    <head>
+        <title>Filters</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="angular-local-storage.js"></script>
+        <script src="controller.js"></script>
+    </head>
+    <body ng-controller="FilterController">
+        <div class="container">
+            <div class="row">
+                <div class="form-group">
+                    <label>{{ myHtml | removeHtml}}</label>
+                    <p>
+                        {{ myJson | json}}
+                    </p>
+                    <p>
+                        {{ currency | currency:'Bs'}}
+                    </p>
+                </div>                
+            </div>            
+        </div>
+    </body>
+</html>
