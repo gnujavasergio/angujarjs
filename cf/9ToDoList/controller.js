@@ -19,24 +19,24 @@ angular.module("ToDoList", ["LocalStorageModule"])
              }
              */
             /*
-            $scope.$watch(function () {
-                return $scope.newActivity;
-            }, function (newValue, oldValue) {
-                console.log(newValue);
-                console.log(oldValue);
+             $scope.$watch(function () {
+             return $scope.newActivity;
+             }, function (newValue, oldValue) {
+             console.log(newValue);
+             console.log(oldValue);
+             });
+             */
+
+            $scope.$watchCollection('todo', function (newValue, oldValue) {
+                localStorageService.set("angular-todoList", $scope.todo);
             });
-            */
-           
-           $scope.$watchCollection('todo',function(newValue,oldValue){
-               localStorageService.set("angular-todoList", $scope.todo);
-           });
-           
+
             $scope.addActivity = function () {
                 $scope.todo.push($scope.newActivity)
-                $scope.newActivity = {};                
+                $scope.newActivity = {};
             }
 
             $scope.cleanActivity = function () {
-                $scope.todo = [];                
+                $scope.todo = [];
             }
         });
